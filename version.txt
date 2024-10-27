@@ -1,0 +1,95 @@
+= Version 3.1.5 =
+* Tested with WordPress 4.9.1
+
+= Version 3.1.4 =
+* Fixed bug where undefined variable was present when using random verse shortcode when Standardize CX References not enabled. Thanks to @laplander for bringing this bug to light.
+* Tested with WordPress 4.8.2
+* Added 'Requires PHP' version 5.2 tag
+
+= Version 3.1.3 =
+* Tested with WordPress 4.8
+
+= Version 3.1.2 =
+* Fixes plugin to correctly work with WordPress Multi-Site Networks
+ * Updated databases prefixes to use base prefix for multisite installations
+ * Require network activate set in plugin header for multisite installations
+ * Created network settings page for Delete data option and use local data options
+ * Added warning messages to admin plan editor page and admin library page.
+ * Added notice to about page that only super admins can edit plans.
+ * Updated user capabilities required to access plan editor admin page and library admin page.
+ * Current setup on mutlisites require network administrator (super admin) to check option to delete data on plugin delete, change options to use local data for Bible and devotionals, upload libraries, and edit plans. Site administrators have access to  change plan settings. Default reading plans can be different from site to site but share the same data for plans, devotionals, and Bible text if local options is enabled by network administrator.
+* Removed date_default_timezone_set and utilized date_i18n instead of date function throughout
+* Spell-checked
+
+= Version 3.1.1 =
+* Fixed bug where fatal error was thrown on activation on servers running PHP < 5.5.0
+
+= Version 3.1 =
+* Added buttons to TinyMCE editor to quickly add AMD Bible Reading shortcodes
+* Added links support, donate, and rate links to plugins list in admin
+* Added admin dashboard widget to display daily Bible reading.
+* Added admin dashboard widget to display daily Devotional.
+* Added option in settings page for Todays Full Reading page.
+* Updated readme for formatting errors.
+
+= Version 3.0.1 =
+* Changed name to AMD Bible Reading
+* Security Updates
+ * removed unnecessary and insecure csv-process.php that was moved into function amdbible_import_csv function in version 3.0
+ * check user capabilities added in insert-devos-empty.php
+ * check user capabilities added in insert-keys.php
+ * check user capabilities added in insert-kjv-empty.php
+ * check user capabilities added in insert-plans.php
+ * check user capabilities added in uninstall.php
+ * check user capabilities added to functions requiring access levels.
+ * sanitized input throughout plugin.
+* Bug Fixes
+* Cleaned up code
+
+= Version 3.0 API Functionality =
+* Added Library Settings Page
+* Added ability to export Bible
+* Added ability to export Devotional
+* Added ability to import Bible
+* Added ability to import Devotional
+* Added link to KJV Bible in CSV format found at http://amasterdesigns.com/amdbible_kjv/
+* Added link to Devotional in CSV format found at http://amasterdesigns.com/amdbible_devos/
+* Removed insert-kjv.php and uploaded file to http://amasterdesigns.com/insert-kjv/ for public download and use.
+* Removed insert-devos.php and uploaded file to http://amasterdesigns.com/insert-devos/ for public download and use.
+* Added setting to use local bible database.
+* Added setting to use local devotional database.
+* Remove KJV and Devotional data from plugin install database data.
+* Configure backup utilization of API found at http://api.amasterdesigns.com if local database of bible and devotional are not present.
+* Update Screenshots
+
+= Version 2.1 Feature Enhancements =
+* Added ability to edit plan description
+* Added ability to delete plans but not default plans
+* Added option in widget to select plan
+* Added option for chapter number and verse number colors
+* Added shortcode for direct passage using complex reference
+* Removed 64001015 (3 John 1:15) empty verse from KJV Bible database
+* Updated Database Version to 2.1
+* Added ability to export plan as CSV
+* Added option parameters to daily reading shortcode and direct passage shortcode - see about AMD for more information
+* Updated amdbible_get_plan function to return plan 1 if the given attribute in the function is not a current plan
+* Adjusted amdbible_date_form function to work on pages where permalinks contain variables.
+* Added shortcode and widget for random verse or chapter of any chapter, book, or of the entire Bible.
+* Added ability to leave blanks on reading plan for days where there is no reading scheduled.
+* Updated About AMD page with revised instructions and shortcodes.
+
+= Version 2.0.1 Bug Fixes =
+**Warning** Updating to this version will delete any changes made to reading plans. Please make notes of custom plans before updating plugin.
+* Updated Database Version to 2.0.1
+ * Added Unique Constraint to p (plan) and d (day) on *amdbible_plans table to properly allow updating without creating duplicate entries
+ * Updated incorrect abbreviations for Judges from \'Jud\' to \'Judg\'
+* Updated amdbible_daily_passage function to stop after first loop
+
+= Version 2.0 Settings Functionality =
+* Created Settings Pages
+* Created Plan Creator/Editor Page
+* Created About Page for directions of use
+* Enabled Complex References in Reading Plan
+
+= Version 1.0 Beta Release =
+* Initial Release
